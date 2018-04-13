@@ -1,14 +1,18 @@
 import math
 
+
 class shape:
     def area(self):
         raise NotImplementedError
     
     def __lt__(self, other):
         return self.area() < other.area()
-##
-##    def __gt__(self, other):
-##        return self.area() > other.area()
+
+#    if __gt__ is not defined but __lt__ is defined then the expression
+#    s1 > s2 results in __lt__ being called (as if the expression was
+#    s2 < s1) and vice versa.
+#    def __gt__(self, other):
+#        return self.area() > other.area()
 
 
 class rectangle(shape):

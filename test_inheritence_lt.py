@@ -45,3 +45,10 @@ class circle(shape):
             return self.r < other.r
         else:
             return super(circle, self).__lt__(other)
+
+
+rect = rectangle(3, 4)
+circ = circle(3)
+
+print("Is the circle bigger than the rectangle? ", circ>rect)
+

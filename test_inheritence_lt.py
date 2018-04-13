@@ -24,10 +24,13 @@ class rectangle(shape):
         return self.l * self.h
 
     def __lt__(self, other):
-        if self.l != other.l:
-            return self.l < other.l
+        if (type(self) == type(other)):
+            if self.l != other.l:
+                return self.l < other.l
+            else:
+                return self.h < other.h
         else:
-            return self.h < other.h
+            return super(rectangle, self).__lt__(other)
 
 
 class circle(shape):
@@ -38,5 +41,7 @@ class circle(shape):
         return (4/3) * math.pi * self.r * self.r
 
     def __lt__(self, other):
-        return self.r < other.r
-    
+        if (type(self) == type(other)):
+            return self.r < other.r
+        else:
+            return super(circle, self).__lt__(other)
